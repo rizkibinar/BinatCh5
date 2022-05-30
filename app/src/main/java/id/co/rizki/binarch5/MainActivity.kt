@@ -27,12 +27,14 @@ class MainActivity : AppCompatActivity() {
         btnLoad.setOnClickListener {
 
             requestLocationPermission()
+            // berfungsi untuk me-load gambar dari Url
             Glide.with(this)
                 .load("https://i.ibb.co/zJHYGBP/binarlogo.jpg")
-                .circleCrop()
+                .circleCrop() // optional, untuk membuat gambar jadi bulat
                 .into(imageBinar)
         }
 
+        // men-check apakah permission location sudah di allow atau belom
         val permissionLocationStatus = checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION)
 
         if(permissionLocationStatus == PackageManager.PERMISSION_GRANTED) {
@@ -45,6 +47,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    // kepanggil saat usernya klik allow/deny
+    // berfungsi untuk merespon hasil klik user
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -63,10 +67,12 @@ class MainActivity : AppCompatActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
 
+    // fungsi tampilin prompt untuk minta permission ke user, hasilnya akan masuk ke onRequestPermissionsResult
     private fun requestLocationPermission() {
         requestPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 201)
     }
 
+    // fungsi untuk ambil LatLong/kordinat dari user (pastiin sudah dapat permission Location sebelum manggil fungsi ini)
     @SuppressLint("MissingPermission")
     private fun getLatLong() {
 
