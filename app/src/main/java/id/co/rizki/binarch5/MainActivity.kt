@@ -3,23 +3,28 @@ package id.co.rizki.binarch5
 import android.Manifest
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.LocationManager
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import com.bumptech.glide.Glide
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var imageBinar : ImageView
     lateinit var btnLoad : Button
-    
+    lateinit var btnNext : Button
+
     private val TAG = "MainActivity"
 
+    @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -28,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
         imageBinar = findViewById(R.id.iv_binar)
         btnLoad = findViewById(R.id.btn_load)
+        btnNext = findViewById(R.id.btn_next)
 
         btnLoad.setOnClickListener {
 
@@ -37,6 +43,10 @@ class MainActivity : AppCompatActivity() {
                 .load("https://i.ibb.co/zJHYGBP/binarlogo.jpg")
                 .circleCrop() // optional, untuk membuat gambar jadi bulat
                 .into(imageBinar)
+        }
+
+        btnNext.setOnClickListener {
+            startActivity(Intent(this, FragmentActivity::class.java))
         }
 
         // men-check apakah permission location sudah di allow atau belom
