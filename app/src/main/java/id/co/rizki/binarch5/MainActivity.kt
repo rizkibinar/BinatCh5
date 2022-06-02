@@ -7,6 +7,7 @@ import android.content.pm.PackageManager
 import android.location.LocationManager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
@@ -16,10 +17,14 @@ class MainActivity : AppCompatActivity() {
 
     lateinit var imageBinar : ImageView
     lateinit var btnLoad : Button
+    
+    private val TAG = "MainActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        Log.d(TAG, "onCreate: ")
 
         imageBinar = findViewById(R.id.iv_binar)
         btnLoad = findViewById(R.id.btn_load)
@@ -45,6 +50,37 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "Permission not Granted", Toast.LENGTH_SHORT).show()
         }
 
+    }
+
+    override fun onStart() {
+        super.onStart()
+
+        Log.d(TAG, "onStart: ")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        
+        Log.d(TAG, "onResume: ")
+    }
+
+    override fun onPause() {
+        super.onPause()
+
+        Log.d(TAG, "onPause: ")
+        // save notes user yang belum kelar waktu pindah activity
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        Log.d(TAG, "onStop: ")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        Log.d(TAG, "onDestroy: ")
     }
 
     // kepanggil saat usernya klik allow/deny
