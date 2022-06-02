@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var imageBinar : ImageView
     lateinit var btnLoad : Button
     lateinit var btnNext : Button
+    lateinit var btnViewPager : Button
 
     private val TAG = "MainActivity"
 
@@ -34,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         imageBinar = findViewById(R.id.iv_binar)
         btnLoad = findViewById(R.id.btn_load)
         btnNext = findViewById(R.id.btn_next)
+        btnViewPager = findViewById(R.id.btn_view_pager)
 
         btnLoad.setOnClickListener {
 
@@ -47,6 +49,10 @@ class MainActivity : AppCompatActivity() {
 
         btnNext.setOnClickListener {
             startActivity(Intent(this, FragmentActivity::class.java))
+        }
+
+        btnViewPager.setOnClickListener {
+            startActivity(Intent(this, ViewPagerActivity::class.java))
         }
 
         // men-check apakah permission location sudah di allow atau belom
