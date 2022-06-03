@@ -22,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnLoad : Button
     lateinit var btnNext : Button
     lateinit var btnViewPager : Button
+    lateinit var btnLogin : Button
 
     private val TAG = "MainActivity"
 
@@ -36,6 +37,7 @@ class MainActivity : AppCompatActivity() {
         btnLoad = findViewById(R.id.btn_load)
         btnNext = findViewById(R.id.btn_next)
         btnViewPager = findViewById(R.id.btn_view_pager)
+        btnLogin = findViewById(R.id.btn_login)
 
         btnLoad.setOnClickListener {
 
@@ -53,6 +55,10 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("DATA_UMUR_USER", 19)
 //            intent.putExtra("DATA_GAJI_USER", 10000000f)
             startActivity(intent)
+        }
+
+        btnLogin.setOnClickListener {
+            startActivity(Intent(this, LoginActivty::class.java))
         }
 
         btnViewPager.setOnClickListener {
