@@ -3,6 +3,7 @@ package id.co.rizki.binarch5
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
 
 class FragmentActivity : AppCompatActivity() {
@@ -26,6 +27,14 @@ class FragmentActivity : AppCompatActivity() {
 
         val ivHome = findViewById<ImageView>(R.id.iv_home)
         val ivSearch = findViewById<ImageView>(R.id.iv_search)
+
+        val intentDariMain = intent
+
+        val namaDariMain = intentDariMain.getStringExtra("DATA_NAMA_USER")
+        val umurDariMain = intentDariMain.getIntExtra("DATA_UMUR_USER", 0)
+        val gajiDariMain = intentDariMain.getFloatExtra("DATA_GAJI_USER", 0f)
+
+        Toast.makeText(this, "$namaDariMain $umurDariMain $gajiDariMain", Toast.LENGTH_LONG).show()
 
         ivHome.setOnClickListener {
             // code untuk bikin fragment

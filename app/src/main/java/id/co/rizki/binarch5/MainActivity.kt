@@ -48,7 +48,11 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnNext.setOnClickListener {
-            startActivity(Intent(this, FragmentActivity::class.java))
+            val intent = Intent(this, FragmentActivity::class.java)
+            intent.putExtra("DATA_NAMA_USER", "Sabrina Binar")
+            intent.putExtra("DATA_UMUR_USER", 19)
+//            intent.putExtra("DATA_GAJI_USER", 10000000f)
+            startActivity(intent)
         }
 
         btnViewPager.setOnClickListener {
@@ -120,6 +124,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     // fungsi tampilin prompt untuk minta permission ke user, hasilnya akan masuk ke onRequestPermissionsResult
+    @RequiresApi(Build.VERSION_CODES.M)
     private fun requestLocationPermission() {
         requestPermissions(arrayOf(Manifest.permission.ACCESS_FINE_LOCATION), 201)
     }
