@@ -50,10 +50,25 @@ class MainActivity : AppCompatActivity() {
         }
 
         btnNext.setOnClickListener {
+            // pengiriman data intent metode direct
             val intent = Intent(this, FragmentActivity::class.java)
             intent.putExtra("DATA_NAMA_USER", "Sabrina Binar")
             intent.putExtra("DATA_UMUR_USER", 19)
-//            intent.putExtra("DATA_GAJI_USER", 10000000f)
+            intent.putExtra("DATA_GAJI_USER", 10000000f)
+
+            //contoh pengiriman data pakai bundle
+            val kucingSaya = Cat()
+
+            intent.putExtra("DATA_KUCING",kucingSaya)
+
+            //pengiriman data intent metode bundle
+            val bundle = Bundle()
+            bundle.putString("DATA_NAMA_USER", "Sabrina Binar")
+            bundle.putInt("DATA_UMUR_USER", 19)
+            bundle.putFloat("DATA_GAJI_USER", 10000000f)
+
+            intent.putExtras(bundle)
+
             startActivity(intent)
         }
 

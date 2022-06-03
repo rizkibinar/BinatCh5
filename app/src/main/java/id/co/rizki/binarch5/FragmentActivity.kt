@@ -34,6 +34,13 @@ class FragmentActivity : AppCompatActivity() {
         val umurDariMain = intentDariMain.getIntExtra("DATA_UMUR_USER", 0)
         val gajiDariMain = intentDariMain.getFloatExtra("DATA_GAJI_USER", 0f)
 
+//        tangkap intent melalui bundle
+//        val bundle = intentDariMain.extras
+
+//        val namaDariMain = bundle?.getString("DATA_NAMA_USER")
+//        val umurDariMain = bundle?.getInt("DATA_UMUR_USER", 0)
+//        val gajiDariMain = bundle?.getFloat("DATA_GAJI_USER", 0f)
+
         Toast.makeText(this, "$namaDariMain $umurDariMain $gajiDariMain", Toast.LENGTH_LONG).show()
 
         ivHome.setOnClickListener {
