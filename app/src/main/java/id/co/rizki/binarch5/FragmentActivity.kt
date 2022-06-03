@@ -1,10 +1,13 @@
 package id.co.rizki.binarch5
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.fragment.app.FragmentTransaction
+import com.google.android.material.snackbar.Snackbar
 
 class FragmentActivity : AppCompatActivity() {
 
@@ -43,7 +46,28 @@ class FragmentActivity : AppCompatActivity() {
 
         Toast.makeText(this, "$namaDariMain $umurDariMain $gajiDariMain", Toast.LENGTH_LONG).show()
 
+        val layoutFragment = findViewById<LinearLayout>(R.id.layout_fragment)
+
+        // contoh snackbar biasa tanpa action
+        Snackbar.make(layoutFragment, "$namaDariMain $umurDariMain $gajiDariMain" , Snackbar.LENGTH_SHORT).show()
+
+
+
         ivHome.setOnClickListener {
+            // contoh snackbar dengan action
+            val snackbar = Snackbar.make(layoutFragment, "$namaDariMain $umurDariMain $gajiDariMain" , 15000)
+
+            // tambah action di snackbarnya, dengan parameter text
+            snackbar.setAction("X") {
+                // block code yang akan ter eksekusi saat user klik action
+                snackbar.dismiss()
+            }
+
+            //ganti warna text action
+            snackbar.setActionTextColor(Color.GREEN)
+
+            snackbar.show()
+
             // code untuk bikin fragment
             val firstFragment = FirstFragment()
 
