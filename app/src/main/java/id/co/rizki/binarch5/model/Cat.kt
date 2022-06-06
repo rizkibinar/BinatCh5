@@ -1,4 +1,4 @@
-package id.co.rizki.binarch5
+package id.co.rizki.binarch5.model
 
 import android.os.Parcel
 import android.os.Parcelable

@@ -1,4 +1,4 @@
-package id.co.rizki.binarch5
+package id.co.rizki.binarch5.viewpager
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -6,6 +6,9 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.viewpager.widget.ViewPager
+import id.co.rizki.binarch5.R
+import id.co.rizki.binarch5.fragment.FirstFragment
+import id.co.rizki.binarch5.fragment.SecondFragment
 
 class ViewPagerActivity : AppCompatActivity() {
 

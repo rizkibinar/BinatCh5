@@ -15,6 +15,11 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import com.bumptech.glide.Glide
+import id.co.rizki.binarch5.dialog.DialogActivity
+import id.co.rizki.binarch5.fragment.FragmentActivity
+import id.co.rizki.binarch5.intent.LoginActivty
+import id.co.rizki.binarch5.model.Cat
+import id.co.rizki.binarch5.viewpager.ViewPagerActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -23,6 +28,7 @@ class MainActivity : AppCompatActivity() {
     lateinit var btnNext : Button
     lateinit var btnViewPager : Button
     lateinit var btnLogin : Button
+    lateinit var btnDialog : Button
 
     private val TAG = "MainActivity"
 
@@ -38,6 +44,7 @@ class MainActivity : AppCompatActivity() {
         btnNext = findViewById(R.id.btn_next)
         btnViewPager = findViewById(R.id.btn_view_pager)
         btnLogin = findViewById(R.id.btn_login)
+        btnDialog = findViewById(R.id.btn_dialog)
 
         btnLoad.setOnClickListener {
 
@@ -78,6 +85,10 @@ class MainActivity : AppCompatActivity() {
 
         btnViewPager.setOnClickListener {
             startActivity(Intent(this, ViewPagerActivity::class.java))
+        }
+
+        btnDialog.setOnClickListener {
+            startActivity(Intent(this, DialogActivity::class.java))
         }
 
         // men-check apakah permission location sudah di allow atau belom

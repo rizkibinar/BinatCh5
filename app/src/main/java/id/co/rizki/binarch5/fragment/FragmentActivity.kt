@@ -1,4 +1,4 @@
-package id.co.rizki.binarch5
+package id.co.rizki.binarch5.fragment
 
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
@@ -6,8 +6,8 @@ import android.os.Bundle
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.snackbar.Snackbar
+import id.co.rizki.binarch5.R
 
 class FragmentActivity : AppCompatActivity() {
 

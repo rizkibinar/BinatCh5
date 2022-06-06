@@ -1,10 +1,11 @@
-package id.co.rizki.binarch5
+package id.co.rizki.binarch5.intent
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import id.co.rizki.binarch5.R
 
 class LoginActivty : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,7 +20,7 @@ class LoginActivty : AppCompatActivity() {
             val namaUser = etNamaUser.text.toString()
 
             // buat object intent menuju HomeActivity
-            val intentToMain = Intent(this,HomeActivity::class.java)
+            val intentToMain = Intent(this, HomeActivity::class.java)
 
             // tambahkan nama user yang telah di input ke intent, dengan KEY/"RESI" DATA_NAMA_USER
             intentToMain.putExtra("DATA_NAMA_USER", namaUser)
